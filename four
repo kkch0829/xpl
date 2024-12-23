@@ -1,0 +1,340 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("ImageLabel")
+local CloseButton = Instance.new("TextButton")
+local BF = Instance.new("Frame")
+local BR = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local RF = Instance.new("Frame")
+local ROT = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local Frame_2 = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local SF = Instance.new("Frame")
+local SL = Instance.new("TextLabel")
+local UICorner_5 = Instance.new("UICorner")
+local TextButton_3 = Instance.new("TextButton")
+local Frame_3 = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local ImageButton = Instance.new("ImageButton")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.BackgroundTransparency = 1.000
+MainFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+MainFrame.Position = UDim2.new(0.5, 0, 0.499270082, 0)
+MainFrame.Size = UDim2.new(0.25, 0, 0.5, 0)
+MainFrame.Visible = false
+MainFrame.Image = "rbxassetid://3570695787"
+MainFrame.ImageColor3 = Color3.fromRGB(40, 40, 40)
+MainFrame.ScaleType = Enum.ScaleType.Slice
+MainFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+MainFrame.SliceScale = 0.120
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = MainFrame
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.BackgroundTransparency = 1.000
+CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.BorderSizePixel = 0
+CloseButton.Position = UDim2.new(0.903956413, 0, 0.0138109149, 0)
+CloseButton.Size = UDim2.new(0.100000001, 0, 0.100000001, 0)
+CloseButton.Font = Enum.Font.SourceSans
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton.TextScaled = true
+CloseButton.TextSize = 14.000
+CloseButton.TextWrapped = true
+CloseButton.MouseButton1Click:Connect(function()
+
+	Title.Visible = false
+	CloseButton.Visible = false
+
+
+	CloseButton.Active = false
+	MainFrame.Visible = false
+	ImageButton.Visible = true
+
+	BF.Visible = false
+	RF.Visible = false
+	SF.Visible = false
+end)
+
+BF.Name = "BF"
+BF.Parent = MainFrame
+BF.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+BF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BF.BorderSizePixel = 0
+BF.Position = UDim2.new(0.0553251393, 0, 0.423357725, 0)
+BF.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+
+BR.Name = "BR"
+BR.Parent = BF
+BR.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+BR.BackgroundTransparency = 1.000
+BR.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BR.BorderSizePixel = 3
+BR.Position = UDim2.new(0.00800000038, 0, 0.0399999991, 0)
+BR.Size = UDim2.new(0.61500001, 0, 1, 0)
+BR.Font = Enum.Font.SourceSans
+BR.Text = "Backrow Line Fault"
+BR.TextColor3 = Color3.fromRGB(0, 0, 0)
+BR.TextScaled = true
+BR.TextSize = 14.000
+BR.TextWrapped = true
+
+UICorner.Parent = BF
+
+TextButton.Parent = BF
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Size = UDim2.new(1, 0, 1, 0)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Click:Connect(function()
+	local canBLF = false
+
+	if canBLF == false then
+		Frame.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		workspace.BackrowLF.Size = Vector3.new(0.1,0.1,0.1)
+		canBLF = true
+	elseif canBLF == true then
+		Frame.BackgroundColor3 = Color3.fromRGB(255,0,0)
+		workspace.BackrowLF.Size = Vector3.new(33,1.5,80)
+		canBLF = false
+	end
+end)
+
+Frame.Parent = BF
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.904440999, 0, 0.268518656, 0)
+Frame.Size = UDim2.new(0.061999999, 0, 0.479999989, 0)
+
+UICorner_2.CornerRadius = UDim.new(1, 0)
+UICorner_2.Parent = Frame
+
+RF.Name = "RF"
+RF.Parent = MainFrame
+RF.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+RF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RF.BorderSizePixel = 0
+RF.Position = UDim2.new(0.0553253964, 0, 0.239416093, 0)
+RF.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+
+ROT.Name = "ROT"
+ROT.Parent = RF
+ROT.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+ROT.BackgroundTransparency = 1.000
+ROT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ROT.BorderSizePixel = 3
+ROT.Position = UDim2.new(0.00800000038, 0, 0.0399999991, 0)
+ROT.Size = UDim2.new(0.61500001, 0, 1, 0)
+ROT.Font = Enum.Font.SourceSans
+ROT.Text = "Rotate Mid-Air"
+ROT.TextColor3 = Color3.fromRGB(0, 0, 0)
+ROT.TextScaled = true
+ROT.TextSize = 14.000
+ROT.TextWrapped = true
+
+UICorner_3.Parent = RF
+
+TextButton_2.Parent = RF
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.BackgroundTransparency = 1.000
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Size = UDim2.new(1, 0, 1, 0)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = ""
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 14.000
+TextButton_2.MouseButton1Click:Connect(function()
+	local canROTM = false
+
+	if canROTM == false then
+		Frame_2.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		local Players = game:GetService("Players")
+
+		local player = Players.LocalPlayer
+
+		local character = player.Character or player.CharacterAdded:Wait()
+		local Humanoid = character:WaitForChild("Humanoid")
+
+		Humanoid.StateChanged:Connect(function(oldState, newState)
+			if Enum.HumanoidStateType.Landed == newState then
+				Humanoid.AutoRotate = true
+			elseif Enum.HumanoidStateType.Freefall == newState then
+				Humanoid.AutoRotate = true
+			elseif Enum.HumanoidStateType.Jumping == newState then
+				Humanoid.AutoRotate = true
+			end
+		end)
+		canROTM = true
+	elseif canROTM == true then
+		Frame_2.BackgroundColor3 = Color3.fromRGB(255,0,0)
+		local Players = game:GetService("Players")
+
+		local player = Players.LocalPlayer
+
+		local character = player.Character or player.CharacterAdded:Wait()
+		local Humanoid = character:WaitForChild("Humanoid")
+
+		Humanoid.StateChanged:Connect(function(oldState, newState)
+			if Enum.HumanoidStateType.Landed == newState then
+				Humanoid.AutoRotate = true
+			elseif Enum.HumanoidStateType.Freefall == newState then
+				Humanoid.AutoRotate = false
+			elseif Enum.HumanoidStateType.Jumping == newState then
+				Humanoid.AutoRotate = false
+			end
+			canROTM = false
+		end)
+	end
+end)
+
+Frame_2.Parent = RF
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.901367366, 0, 0.245370507, 0)
+Frame_2.Size = UDim2.new(0.061999999, 0, 0.479999989, 0)
+
+UICorner_4.CornerRadius = UDim.new(1, 0)
+UICorner_4.Parent = Frame_2
+
+SF.Name = "SF"
+SF.Parent = MainFrame
+SF.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+SF.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SF.BorderSizePixel = 0
+SF.Position = UDim2.new(0.0549999587, 0, 0.609999955, 0)
+SF.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+
+SL.Name = "SL"
+SL.Parent = SF
+SL.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+SL.BackgroundTransparency = 1.000
+SL.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SL.BorderSizePixel = 3
+SL.Position = UDim2.new(0.00800009351, 0, 0.0214815494, 0)
+SL.Size = UDim2.new(0.61500001, 0, 1, 0)
+SL.Font = Enum.Font.SourceSans
+SL.Text = "Serve Line Fault"
+SL.TextColor3 = Color3.fromRGB(0, 0, 0)
+SL.TextScaled = true
+SL.TextSize = 14.000
+SL.TextWrapped = true
+
+UICorner_5.Parent = SF
+
+TextButton_3.Parent = SF
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.BackgroundTransparency = 1.000
+TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Size = UDim2.new(1, 0, 1, 0)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = ""
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextSize = 14.000
+TextButton_3.MouseButton1Click:Connect(function()
+	local canSRVL = false
+
+	if canSRVL == false then
+		Frame_3.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		workspace.ServeLF.Size = Vector3.new(0.1,0.1,0.1)
+		canSRVL = true
+	elseif    canSRVL == true then
+		Frame_3.BackgroundColor3 = Color3.fromRGB(255,0,0)
+		workspace.ServeLF.Size = Vector3.new(95,1,120)
+		canSRVL = false
+	end
+end)
+
+Frame_3.Parent = SF
+Frame_3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0.907514632, 0, 0.245370507, 0)
+Frame_3.Size = UDim2.new(0.061999999, 0, 0.479999989, 0)
+
+UICorner_6.CornerRadius = UDim.new(1, 0)
+UICorner_6.Parent = Frame_3
+
+Title.Name = "Title"
+Title.Parent = MainFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 0, 0.00370713626, 0)
+Title.Size = UDim2.new(1, 0, 0.150000006, 0)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Volleyball 4.2"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0, 74, 1, -64)
+ImageButton.Size = UDim2.new(0.0529999994, 0, 0.0529999994, 0)
+ImageButton.Image = "rbxassetid://5703040521"
+ImageButton.MouseButton1Click:Connect(function()
+
+	MainFrame.Visible = true
+	ImageButton.Visible = false
+	ImageButton.Active = false
+
+	Title.Visible = true
+	CloseButton.Visible = true
+
+	BF.Visible = true
+	RF.Visible = true
+	SF.Visible = true
+
+end)
+
+UIAspectRatioConstraint.Parent = ImageButton
+
+TextLabel.Parent = ImageButton
+TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(0.5, 0, 0, -15)
+TextLabel.Size = UDim2.new(1, 10, 0.5, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "SECRET"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeTransparency = 0.500
+TextLabel.TextWrapped = true
