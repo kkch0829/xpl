@@ -30,11 +30,9 @@ do
         if Options.BRToggle.Value == true then
             local brLF = workspace.BackrowLF
             brLF.Size = Vector3.new(0.1, 0.1, 0.1)
-			print("YES")
 		elseif Options.BRToggle.Value == false then
             local brLF = workspace.BackrowLF
             brLF.Size = Vector3.new(33, 1.5, 80)
-			print("NO")
 		end
     end)
 
