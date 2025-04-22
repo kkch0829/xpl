@@ -3,9 +3,6 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Options = Fluent.Options
 
-local canLF = false
-local canBR = false
-
 local Window = Fluent:CreateWindow({
     Title = "Volleyball 4.2 ",
     SubTitle = "by Kch",
@@ -27,29 +24,27 @@ do
         Title = "Line Faults"
     })
 
-    local BRFault = Tabs.Main:AddToggle("MyToggle", {Title = "Backrow Line Fault", Default = false })
+    local BRFault = Tabs.Main:AddToggle("BRToggle", {Title = "Backrow Line Fault", Default = false })
 
     BRFault:OnChanged(function()
-        if Options.MyToggle.Value == true then
-            canBR = true
+        if Options.BRToggle.Value == true then
             local brLF = workspace.BackrowLF
             brLF.Size = Vector3.new(0.1, 0.1, 0.1)
-		elseif Options.MyToggle.Value == false then
-            canBR = false
+			print("YES")
+		elseif Options.BRToggle.Value == false then
             local brLF = workspace.BackrowLF
             brLF.Size = Vector3.new(33, 1.5, 80)
+			print("NO")
 		end
     end)
 
-	local SFault = Tabs.Main:AddToggle("MyToggle", {Title = "Serve Line Fault", Default = false })
+	local SFault = Tabs.Main:AddToggle("SToggle", {Title = "Serve Line Fault", Default = false })
 
     SFault:OnChanged(function()
-        if Options.MyToggle.Value == true then
-            canLF = true
+        if Options.SToggle.Value == true then
             local sLF = workspace.ServeLF
             sLF.Size = Vector3.new(0.1, 0.1, 0.1)
-		elseif Options.MyToggle.Value == false then
-            canLF = false
+		elseif Options.SToggle.Value == false then
             local sLF = workspace.ServeLF
             sLF.Size = Vector3.new(95, 1, 120)
 		end
