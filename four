@@ -20,9 +20,8 @@ local Tabs = {
 }
 
 do
-	Tabs.Main:AddParagraph({
-        Title = "Line Faults"
-    })
+
+	local LFSec = Tabs.Main:AddSection("Line Faults")
 
     local BRFault = Tabs.Main:AddToggle("BRToggle", {Title = "Backrow Line Fault", Default = false })
 
@@ -47,6 +46,29 @@ do
             sLF.Size = Vector3.new(95, 1, 120)
 		end
     end)
+
+	local TiltSec = Tabs.Main:AddSection("Tilts")
+
+	local TiltDD = Tabs.Main:AddDropdown("Dropdown", {
+    Title = "Tilts",
+    Description = "Changes how deep you cut.",
+    Values = {"Normal", "Middle", "Deep", "Deepest"},
+    Multi = false,
+    Default = 1,
+	})
+
+	TiltDD:OnChanged(function(Value)
+		if Value == "Normal" then
+			print("Normal")
+		elseif Value == "Middle" then
+			print("Middle")
+		elseif Value == "Deep" then
+			print("Deep")
+		elseif Value == "Deepest" then
+			print("Deepest")
+		end
+	end)
+
 end
 
 SaveManager:SetLibrary(Fluent)
@@ -57,5 +79,5 @@ InterfaceManager:SetFolder("FluentScriptHub")
 SaveManager:SetFolder("FluentScriptHub/specific-game")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
-Window:SelectTab(1)
 SaveManager:LoadAutoloadConfig()
+Window:SelectTab(1)
