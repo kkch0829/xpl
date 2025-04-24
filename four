@@ -69,11 +69,11 @@ do
         	tilt.P = 3000
 			print("ASDASDASD")
 		elseif Value == "Middle" then
-			tilt.D = 500
-        	tilt.P = 3000
+			tilt.D = 400
+        	tilt.P = 6000
 		elseif Value == "Deep" then
-			tilt.D = 500
-        	tilt.P = 3000
+			tilt.D = 400
+        	tilt.P = 8000
 		elseif Value == "Deepest" then
 			tilt.D = 430
         	tilt.P = 15000
