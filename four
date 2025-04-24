@@ -3,6 +3,12 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Options = Fluent.Options
 
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local hrp = character:WaitForChild("HumanoidRootPart")
+local tilt = hrp:WaitForChild("Tilt") -- This is a BodyGyro
+local UserInputService = game:GetService("UserInputService")
+
 local Window = Fluent:CreateWindow({
     Title = "Volleyball 4.2 ",
     SubTitle = "by Kch",
@@ -51,7 +57,7 @@ do
 
 	local TiltDD = Tabs.Main:AddDropdown("Dropdown", {
     Title = "Tilts",
-    Description = "Changes how deep you cut.",
+    Description = "Changes how deep you spike.",
     Values = {"Normal", "Middle", "Deep", "Deepest"},
     Multi = false,
     Default = 1,
@@ -59,16 +65,21 @@ do
 
 	TiltDD:OnChanged(function(Value)
 		if Value == "Normal" then
-			print("Normal")
+			tilt.D = 500
+        	tilt.P = 3000
+			print("ASDASDASD")
 		elseif Value == "Middle" then
-			print("Middle")
+			tilt.D = 500
+        	tilt.P = 3000
 		elseif Value == "Deep" then
-			print("Deep")
+			tilt.D = 500
+        	tilt.P = 3000
 		elseif Value == "Deepest" then
-			print("Deepest")
+			tilt.D = 430
+        	tilt.P = 15000
+			print("DEEP")
 		end
 	end)
-
 end
 
 SaveManager:SetLibrary(Fluent)
